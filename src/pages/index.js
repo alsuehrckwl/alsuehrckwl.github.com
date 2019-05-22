@@ -1,11 +1,12 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import ScrollArea from "../components/ScrollArea/ScrollAreaWithCss"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Post from "../components/Post/Post"
 
-import '../assets/styles/index.scss'
+import "../assets/styles/index.scss"
 
 class BlogIndex extends React.Component {
   constructor(props) {
@@ -24,22 +25,28 @@ class BlogIndex extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
 
-        <main>
-          {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
+        <ScrollArea
+          className="posts"
+          verticalContainerStyle={{ width: 8 }}
+          verticalScrollbarStyle={{ width: 4 }}
+        >
+          <ul>
+            {posts.map(({ node }) => {
+              const title = node.frontmatter.title || node.fields.slug
 
-            return (
-              <Post
-                key={node.fields.slug}
-                title={title}
-                link={node.fields.slug}
-                date={node.frontmatter.date}
-                html={node.frontmatter.description || node.excerpt}
-                tags={node.frontmatter.tags}
-              />
-            )
-          })}
-        </main>
+              return (
+                <Post
+                  key={node.fields.slug}
+                  title={title}
+                  link={node.fields.slug}
+                  date={node.frontmatter.date}
+                  html={node.frontmatter.description || node.excerpt}
+                  tags={node.frontmatter.tags}
+                />
+              )
+            })}
+          </ul>
+        </ScrollArea>
       </Layout>
     )
   }

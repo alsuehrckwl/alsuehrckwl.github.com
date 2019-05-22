@@ -1,1 +1,61 @@
+@import './src/assets/styles/color';
 
+.post {
+  display: flex;
+  flex-direction: column;
+  margin: 48px 0 24px 0;
+  padding-bottom: 24px;
+  border-bottom: 1px solid $g2;
+
+  &:last-child {
+    border: 0;
+  }
+
+  > small {
+    color: $g3;
+    font-size: 65%;
+    font-weight: 100;
+  }
+
+  > a {
+    color: $fb;
+
+    &:hover {
+      color: $main;
+    }
+  }
+
+  > p {
+    color: $gb;
+    font-weight: 100;
+  }
+
+  &__tags {
+    display: flex;
+
+    > div {
+      margin-right: 8px;
+      border: 1px solid $main;
+      cursor: pointer;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+
+      &:hover {
+        background-color: $main; 
+        transition: all 0.5s ease;
+
+        > span {
+          color: $white;
+        }
+      }
+
+      > span {
+        color: $main;
+        font-family: 'Noto Sans KR';
+          font-weight: 100;
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@import './src/assets/styles/color';
+
+.header-desktop {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 72px;
+  border-right: 1px solid $g2;
+  transition: width 0.4s ease;
+
+  &.open {
+    width: 200px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    position: absolute;
+    width: 140px;
+    margin-top: 50vh;
+    margin-left: -33px;
+    transform: rotate(90deg);
+    transition: all 0.3s ease-in-out;
+
+    > p {
+      margin: 0;
+      font-family: 'Roboto';
+      font-weight: 800;
+      font-size: 15px;
+      color: $fb;
+    }
+
+    &.open {
+      position: relative;
+      margin-top: 0;
+      transform: rotate(0deg);
+
+      > p {
+        margin-top: 22px;
+        margin-right: 24px;
+        text-align: right;
+      }
+    }
+
+    &.opacity {
+      animation: opacity 0.5s;
+    }
+  }
+
+  .hamburger {
+    margin: 24px;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}

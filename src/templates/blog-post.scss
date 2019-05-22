@@ -1,0 +1,19 @@
+@import './src/assets/styles/color';
+
+.blog {
+  > div {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__contents {
+    width: 768px;
+  }
+}
+
+.back-button {
+  z-index: 9999;
+  position: fixed !important;
+  top: 3rem !important;
+  left: 12rem !important;
+}

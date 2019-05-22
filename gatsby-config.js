@@ -11,6 +11,18 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Noto Sans KR`,
+            subsets: [`latin`],
+            variants: [`100`, `300`, `400`, `500`, `700`, `900`]
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-material-ui`,
       // If you want to use styled components, in conjunction to Material-UI, you should:
       // - Change the injection order

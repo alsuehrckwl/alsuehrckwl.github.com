@@ -1,7 +1,9 @@
 import React from "react"
 
 import { rhythm } from "../utils/typography"
-import Header from "./Header/Header"
+import HeaderMobile from "./Header/Mobile/HeaderMobile"
+import withWidth, { isWidthUp } from "@material-ui/core/withWidth"
+import HeaderDesktop from "./Header/Desktop/HeaderDesktop"
 
 class Layout extends React.Component {
   render() {
@@ -10,16 +12,22 @@ class Layout extends React.Component {
 
     return (
       <>
-        <Header />
-        {children}
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        {isWidthUp("sm", this.props.width) ? (
+          <HeaderDesktop />
+        ) : (
+          <HeaderMobile />
+        )}
+        <div className="contents">
+          {children}
+          <footer>
+            © {new Date().getFullYear()}, Built with
+            {` `}
+            <a href="https://www.gatsbyjs.org">Gatsby</a>
+          </footer>
+        </div>
       </>
     )
   }
 }
 
-export default Layout
+export default withWidth()(Layout)

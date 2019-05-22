@@ -2,14 +2,14 @@ import React, { Component, Fragment } from "react"
 import { Link } from "gatsby"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
-import "./Header.scss"
+import "./HeaderMobile.scss"
 import {
   DrawerContextConsumer,
   DrawerContext,
-} from "../../contextApi/DrawerContext"
+} from "../../../contextApi/DrawerContext"
 import { Drawer } from "@material-ui/core";
 
-class Header extends Component {
+class HeaderMobile extends Component {
   constructor(props) {
     super(props)
   }
@@ -60,4 +60,4 @@ class Header extends Component {
   }
 }
 
-export default Header
+export default HeaderMobile
