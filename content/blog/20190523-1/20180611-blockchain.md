@@ -1,6 +1,6 @@
 ---
 title: blockchain
-date: :"2019-05-23T08:27:38.311Z"
+date: "2019-05-14T22:40:32.169Z"
 description: 스터디파이에서 블록체인을 공부했던 흔적들
 tags: ['blockchain']
 ---

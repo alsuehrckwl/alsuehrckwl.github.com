@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import ScrollArea from "../components/ScrollArea/ScrollAreaWithCss"
 
 import Layout from "../components/layout"
