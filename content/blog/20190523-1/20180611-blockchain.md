@@ -3,6 +3,8 @@ title: blockchain
 date: "2019-05-14T22:40:32.169Z"
 description: 스터디파이에서 블록체인을 공부했던 흔적들
 tags: ['blockchain']
+category: 
+  - etc
 ---
 
 ### 블록, 블록체인이란 무엇인가? 왜 “체인"이라는 단어를 사용하는가? *

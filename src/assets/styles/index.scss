@@ -16,6 +16,10 @@ body {
   bottom: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 #___gatsby {
   display: flex;
   width: 100%;
@@ -27,9 +31,10 @@ body {
     flex-direction: row;
   }
 
-  @include mob {
+  @include media(598px) {
     > div {
       flex-direction: column;
+      width: 100%;
     }
   }
 }
@@ -42,7 +47,15 @@ main {
   height: 100%;
 
   ul {
-    margin: 24px 80px;
+    width: 768px;
+    margin: auto;
+  }
+
+  @include media(850px) {
+    ul {
+      width: 100%;
+      padding: 0px 16px;
+    }
   }
 }
 

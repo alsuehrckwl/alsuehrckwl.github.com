@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { graphql } from "gatsby"
 import { Link } from "gatsby"
 import "./HeaderDesktop.scss"
 
@@ -43,8 +44,22 @@ class HeaderDesktop extends Component {
                 : `header-desktop__logo ${isOpacity ? "opacity" : ""}`
             }
           >
-            <p>Jeongwoo Kim</p>
+            <Link style={{ boxShadow: `none` }} to={"/"}>
+              <p>Jeongwoo Kim</p>
+            </Link>
           </div>
+        </div>
+        <div
+          className={
+            menuOpen ? `header-desktop__menu open` : "header-desktop__menu"
+          }
+        >
+          <Link style={{ boxShadow: `none` }} to={"/category/javascript"}>
+            javascript
+          </Link>
+          <Link style={{ boxShadow: `none` }} to={"/category/etc"}>
+            etc
+          </Link>
         </div>
         <div className="header-desktop__bottom" />
       </div>
@@ -53,3 +68,22 @@ class HeaderDesktop extends Component {
 }
 
 export default HeaderDesktop
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+            category
+          }
+          frontmatter {
+            tags
+          }
+        }
+      }
+    }
+  }
+`

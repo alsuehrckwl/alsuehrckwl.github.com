@@ -20,7 +20,8 @@ class Layout extends React.Component {
         <div className="contents">
           {children}
           <footer>
-            © {new Date().getFullYear()}, Built with
+            Copyright by Jeongwoo Kim. | © {new Date().getFullYear()}, Built
+            with
             {` `}
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </footer>

@@ -3,6 +3,8 @@ title: Eject 하지않고 webpack 수정하기
 date: "2019-05-14T22:40:32.169Z"
 description: 리액트 스크립트를 대체하는 react-app-rewired를 이용하면 리액트 스크립트의 웹팩 설정에 새로운 바벨 설정을 주입시킬 수 있다.
 tags: ['react', 'react script', 'react app rewired', 'eject', 'create-react-app', 'babel', 'webpack']
+category: 
+ - javascript
 ---
 
 리액트 스크립트를 대체하는 react-app-rewired를 이용하면 리액트 스크립트의 웹팩 설정에 새로운 바벨 설정을 주입시킬 수 있다.

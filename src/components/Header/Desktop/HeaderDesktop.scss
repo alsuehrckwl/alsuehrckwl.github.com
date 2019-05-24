@@ -10,6 +10,7 @@
 
   &.open {
     width: 200px;
+    min-width: 200px;
   }
 
   &__top {
@@ -25,12 +26,20 @@
     transform: rotate(90deg);
     transition: all 0.3s ease-in-out;
 
-    > p {
-      margin: 0;
-      font-family: 'Roboto';
-      font-weight: 800;
-      font-size: 15px;
-      color: $fb;
+    > a {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center; 
+      height: 100%;
+
+      > p {
+        margin: 0;
+        margin-right: 16px;
+        font-family: 'Roboto';
+        font-weight: 800;
+        font-size: 15px;
+        color: $fb;
+      }
     }
 
     &.open {
@@ -47,6 +56,15 @@
 
     &.opacity {
       animation: opacity 0.5s;
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    &.open {
+      display: flex;
+      flex-direction: column
     }
   }
 

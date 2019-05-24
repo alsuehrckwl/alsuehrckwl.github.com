@@ -11,6 +11,12 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     {
+      resolve: "gatsby-plugin-categories",
+      options: {
+        templatePath: `${__dirname}/src/templates/category.js`
+      }
+    },
+    {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
