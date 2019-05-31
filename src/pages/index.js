@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import Post from "../components/Post/Post"
 
 import "../assets/styles/index.scss"
+import { Footer } from "../components/Footer/Footer"
 
 class BlogIndex extends React.Component {
   constructor(props) {
@@ -46,6 +47,7 @@ class BlogIndex extends React.Component {
               )
             })}
           </ul>
+          <Footer />
         </ScrollArea>
       </Layout>
     )
@@ -61,7 +63,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 10
+    ) {
       edges {
         node {
           excerpt

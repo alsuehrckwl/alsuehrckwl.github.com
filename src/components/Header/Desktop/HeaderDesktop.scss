@@ -11,6 +11,7 @@
   &.open {
     width: 200px;
     min-width: 200px;
+    transition: width 0.4s ease;
   }
 
   &__top {
@@ -64,7 +65,14 @@
 
     &.open {
       display: flex;
-      flex-direction: column
+      flex-direction: column;
+      margin: 16px;
+
+      ul {
+        li {
+          list-style: none;
+        }
+      }
     }
   }
 

@@ -9,6 +9,7 @@ import ScrollArea from "../components/ScrollArea/ScrollAreaWithCss"
 
 import "./blog-post.scss"
 import { IconButton } from "@material-ui/core"
+import { Footer } from "../components/Footer/Footer"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -57,42 +58,43 @@ class BlogPostTemplate extends React.Component {
           verticalScrollbarStyle={{ width: 4 }}
         >
           <div className="blog__contents">
-            <h1 className="blog__contents--title">{post.frontmatter.title}</h1>
-            <p className="blog__contents--date">
-              {post.frontmatter.date}
-            </p>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-            <hr
-              style={{
-                marginBottom: rhythm(1),
-              }}
-            />
-            <Bio />
+            <div className="blog__contents--box">
+              <h1 className="blog__contents--title">{post.frontmatter.title}</h1>
+              <p className="blog__contents--date">{post.frontmatter.date}</p>
+              <div dangerouslySetInnerHTML={{ __html: post.html }} />
+              <hr
+                style={{
+                  marginBottom: rhythm(1),
+                }}
+              />
+              <Bio />
 
-            <ul
-              style={{
-                display: `flex`,
-                flexWrap: `wrap`,
-                justifyContent: `space-between`,
-                listStyle: `none`,
-                padding: 0,
-              }}
-            >
-              <li>
-                {previous && (
-                  <Link to={previous.fields.slug} rel="prev">
-                    ← {previous.frontmatter.title}
-                  </Link>
-                )}
-              </li>
-              <li>
-                {next && (
-                  <Link to={next.fields.slug} rel="next">
-                    {next.frontmatter.title} →
-                  </Link>
-                )}
-              </li>
-            </ul>
+              <ul
+                style={{
+                  display: `flex`,
+                  flexWrap: `wrap`,
+                  justifyContent: `space-between`,
+                  listStyle: `none`,
+                  padding: 0,
+                }}
+              >
+                <li>
+                  {previous && (
+                    <Link to={previous.fields.slug} rel="prev">
+                      ← {previous.frontmatter.title}
+                    </Link>
+                  )}
+                </li>
+                <li>
+                  {next && (
+                    <Link to={next.fields.slug} rel="next">
+                      {next.frontmatter.title} →
+                    </Link>
+                  )}
+                </li>
+              </ul>
+            </div>
+            <Footer />
           </div>
         </ScrollArea>
       </Layout>

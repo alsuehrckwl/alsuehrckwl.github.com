@@ -4,7 +4,7 @@ date: "2019-05-23T08:53:22.640Z"
 description: cra 프로젝트에 tslint와 prettier 적용하기
 tags: ['tslint', 'prettier']
 category: 
- - javascript
+ - react
 ---
 
 현재 프로젝트를 진행할 때 prettier formatter를 사용하고있다. 

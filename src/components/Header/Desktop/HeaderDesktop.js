@@ -54,12 +54,29 @@ class HeaderDesktop extends Component {
             menuOpen ? `header-desktop__menu open` : "header-desktop__menu"
           }
         >
-          <Link style={{ boxShadow: `none` }} to={"/category/javascript"}>
-            javascript
-          </Link>
-          <Link style={{ boxShadow: `none` }} to={"/category/etc"}>
-            etc
-          </Link>
+          <ul>
+            <li>
+              <Link style={{ boxShadow: `none` }} to={"/"}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link style={{ boxShadow: `none` }} to={"/category/javascript"}>
+                Javascript
+              </Link>
+            </li>
+            <li>
+              <Link style={{ boxShadow: `none` }} to={"/category/react"}>
+                React
+              </Link>
+            </li>
+            <li>
+              <Link style={{ boxShadow: `none` }} to={"/category/etc"}>
+                Etc
+              </Link>
+            </li>
+          </ul>
+          
         </div>
         <div className="header-desktop__bottom" />
       </div>
