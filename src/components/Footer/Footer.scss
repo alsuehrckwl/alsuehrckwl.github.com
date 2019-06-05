@@ -5,6 +5,7 @@ footer {
   justify-content: space-evenly;
   align-items: center;
   height: 180px;
+  min-height: 180px;
   background-color: $footer-back;
   border-top: 1px solid $footer-border;
 
@@ -13,7 +14,7 @@ footer {
     flex-direction: column;
     justify-content: flex-end;
     height: 100%;
-    margin-bottom: 4rem;
+    padding-bottom: 2rem;
 
     h4 {
       margin-bottom: 8px;
@@ -36,7 +37,7 @@ footer {
     justify-content: flex-end;
     flex-direction: column;
     height: 100%;
-    margin-bottom: 4rem;
+    padding-bottom: 2rem;
 
     p {
       margin-bottom: 0px;

@@ -43,8 +43,11 @@ main {
   margin: 16px;
 }
 
-.posts {
-  height: 100%;
+.contents {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: auto;
 
   ul {
     width: 768px;
@@ -57,10 +60,4 @@ main {
       padding: 0px 16px;
     }
   }
-}
-
-.contents {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
 }

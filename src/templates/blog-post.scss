@@ -9,8 +9,6 @@
   &__contents {
     width: 100%;
 
-    
-
     &--box {
       width: 768px;
       margin: auto; 
@@ -22,14 +20,21 @@
       }
     }
 
-    &--title {
-      margin-top: 3.3rem;
-      font-weight: 700;
-      text-align: center;
-    }
-
-    &--date {
-      text-align: center;
+    &--header {
+      height: 240px;
+      
+      .category {
+        margin-top: 3.3rem;
+        color: $main;
+        font-size: 1.4rem;
+      }
+      
+      .title {
+        font-weight: 700;
+      }
+  
+      .date {
+      }  
     }
   }
 }

@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import ScrollArea from "../components/ScrollArea/ScrollAreaWithCss"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -26,29 +25,23 @@ class BlogIndex extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
 
-        <ScrollArea
-          className="posts"
-          verticalContainerStyle={{ width: 8 }}
-          verticalScrollbarStyle={{ width: 4 }}
-        >
-          <ul>
-            {posts.map(({ node }) => {
-              const title = node.frontmatter.title || node.fields.slug
+        <ul>
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
 
-              return (
-                <Post
-                  key={node.fields.slug}
-                  title={title}
-                  link={node.fields.slug}
-                  date={node.frontmatter.date}
-                  html={node.frontmatter.description || node.excerpt}
-                  tags={node.frontmatter.tags}
-                />
-              )
-            })}
-          </ul>
-          <Footer />
-        </ScrollArea>
+            return (
+              <Post
+                key={node.fields.slug}
+                title={title}
+                link={node.fields.slug}
+                date={node.frontmatter.date}
+                html={node.frontmatter.description || node.excerpt}
+                tags={node.frontmatter.tags}
+              />
+            )
+          })}
+        </ul>
+        <Footer />
       </Layout>
     )
   }

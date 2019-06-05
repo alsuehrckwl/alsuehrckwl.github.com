@@ -5,7 +5,6 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
-import ScrollArea from "../components/ScrollArea/ScrollAreaWithCss"
 
 import "./blog-post.scss"
 import { IconButton } from "@material-ui/core"
@@ -16,6 +15,13 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+    const category =
+      post.frontmatter.category
+        ? post.frontmatter.category[0]
+            .split("")
+            .map((item, idx) => (idx === 0 ? item.toUpperCase() : item))
+            .join("")
+        : ""
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -52,51 +58,48 @@ class BlogPostTemplate extends React.Component {
           </IconButton>
         </Link>
 
-        <ScrollArea
-          className="blog"
-          verticalContainerStyle={{ width: 8 }}
-          verticalScrollbarStyle={{ width: 4 }}
-        >
-          <div className="blog__contents">
-            <div className="blog__contents--box">
-              <h1 className="blog__contents--title">{post.frontmatter.title}</h1>
-              <p className="blog__contents--date">{post.frontmatter.date}</p>
-              <div dangerouslySetInnerHTML={{ __html: post.html }} />
-              <hr
-                style={{
-                  marginBottom: rhythm(1),
-                }}
-              />
-              <Bio />
-
-              <ul
-                style={{
-                  display: `flex`,
-                  flexWrap: `wrap`,
-                  justifyContent: `space-between`,
-                  listStyle: `none`,
-                  padding: 0,
-                }}
-              >
-                <li>
-                  {previous && (
-                    <Link to={previous.fields.slug} rel="prev">
-                      ← {previous.frontmatter.title}
-                    </Link>
-                  )}
-                </li>
-                <li>
-                  {next && (
-                    <Link to={next.fields.slug} rel="next">
-                      {next.frontmatter.title} →
-                    </Link>
-                  )}
-                </li>
-              </ul>
+        <div className="blog__contents">
+          <div className="blog__contents--box">
+            <div className="blog__contents--header">
+              <p className="category">{category}</p>
+              <h1 className="title">{post.frontmatter.title}</h1>
+              <p className="date">{post.frontmatter.description}</p>
             </div>
-            <Footer />
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <hr
+              style={{
+                marginBottom: rhythm(1),
+              }}
+            />
+            <Bio />
+
+            <ul
+              style={{
+                display: `flex`,
+                flexWrap: `wrap`,
+                justifyContent: `space-between`,
+                listStyle: `none`,
+                padding: 0,
+              }}
+            >
+              <li>
+                {previous && (
+                  <Link to={previous.fields.slug} rel="prev">
+                    ← {previous.frontmatter.title}
+                  </Link>
+                )}
+              </li>
+              <li>
+                {next && (
+                  <Link to={next.fields.slug} rel="next">
+                    {next.frontmatter.title} →
+                  </Link>
+                )}
+              </li>
+            </ul>
           </div>
-        </ScrollArea>
+          <Footer />
+        </div>
       </Layout>
     )
   }
@@ -120,6 +123,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        category
       }
     }
   }
