@@ -11,7 +11,7 @@
 
     &--box {
       width: 768px;
-      margin: auto; 
+      margin: auto;
 
       @include media(850px) {
         width: 100%;
@@ -22,19 +22,19 @@
 
     &--header {
       height: 240px;
-      
+
       .category {
         margin-top: 3.3rem;
         color: $main;
         font-size: 1.4rem;
       }
-      
+
       .title {
         font-weight: 700;
       }
-  
+
       .date {
-      }  
+      }
     }
   }
 }
@@ -44,4 +44,10 @@
   position: fixed !important;
   top: 3rem !important;
   left: 12rem !important;
+
+  @include media(850px) {
+    top: 0;
+    right: 0;
+    margin: 8px !important;
+  }
 }

@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 
 import "./blog-post.scss"
 import { IconButton } from "@material-ui/core"
@@ -15,13 +15,12 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-    const category =
-      post.frontmatter.category
-        ? post.frontmatter.category[0]
-            .split("")
-            .map((item, idx) => (idx === 0 ? item.toUpperCase() : item))
-            .join("")
-        : ""
+    const category = post.frontmatter.category
+      ? post.frontmatter.category[0]
+          .split("")
+          .map((item, idx) => (idx === 0 ? item.toUpperCase() : item))
+          .join("")
+      : ""
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -34,24 +33,17 @@ class BlogPostTemplate extends React.Component {
           <IconButton className="back-button" aria-label="Delete">
             <svg
               id="back_svg"
-              width="38px"
-              height="30px"
-              viewBox="-6 0 48 40"
+              width="16px"
+              height="16px"
+              viewBox="0 3 32 24"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
-              // xmlns:xlink="http://www.w3.org/1999/xlink"
             >
-              <g
-                id="Group-2"
-                stroke="none"
-                // stroke-width="1"
-                fill="none"
-                // fill-rule="evenodd"
-              >
+              <g stroke="none" fill="none">
                 <path
                   d="M2.30930274,14 L9.95574934,6.35355339 L9.24864256,5.64644661 L0.646446609,14.2486426 L0.292893219,14.602196 L0.646446609,14.9557493 L9.3294716,23.6387743 L10.0365784,22.9316676 L2.10491083,15 L39,15 L39,14 L2.30930274,14 Z"
                   id="Combined-Shape"
-                  fill="#4C4846"
+                  fill="rgba(0, 0, 0, 0.87)"
                 />
               </g>
             </svg>
