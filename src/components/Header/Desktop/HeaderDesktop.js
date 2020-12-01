@@ -61,6 +61,11 @@ class HeaderDesktop extends Component {
               </Link>
             </li>
             <li>
+              <Link style={{ boxShadow: `none` }} to={"/about"}>
+                About
+              </Link>
+            </li>
+            <li>
               <Link style={{ boxShadow: `none` }} to={"/category/javascript"}>
                 Javascript
               </Link>

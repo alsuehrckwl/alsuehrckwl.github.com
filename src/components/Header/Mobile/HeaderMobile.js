@@ -7,7 +7,7 @@ import {
   DrawerContextConsumer,
   DrawerContext,
 } from "../../../contextApi/DrawerContext"
-import { Drawer } from "@material-ui/core";
+import { Drawer } from "@material-ui/core"
 
 class HeaderMobile extends Component {
   constructor(props) {
@@ -32,9 +32,40 @@ class HeaderMobile extends Component {
                   <Drawer open={isDrawerOpen} onClose={toggleDrawer}>
                     <div tabIndex={0} role="button" onClick={toggleDrawer}>
                       <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
+                        <li>
+                          <Link style={{ boxShadow: `none` }} to={"/"}>
+                            Home
+                          </Link>
+                        </li>
+                        <li>
+                          <Link style={{ boxShadow: `none` }} to={"/about"}>
+                            About
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            style={{ boxShadow: `none` }}
+                            to={"/category/javascript"}
+                          >
+                            Javascript
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            style={{ boxShadow: `none` }}
+                            to={"/category/react"}
+                          >
+                            React
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            style={{ boxShadow: `none` }}
+                            to={"/category/etc"}
+                          >
+                            Etc
+                          </Link>
+                        </li>
                       </ul>
                     </div>
                   </Drawer>
@@ -52,7 +83,7 @@ class HeaderMobile extends Component {
               to={`/`}
             >
               <p>Jeongwoo Kim</p>
-          </Link>
+            </Link>
           </div>
         </Toolbar>
       </AppBar>
