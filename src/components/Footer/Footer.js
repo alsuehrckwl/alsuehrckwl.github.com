@@ -5,9 +5,7 @@ export const Footer = () => (
   <footer>
     <div className="left">
       <h4>Jeongwoo Kim.</h4>
-      <a href="mailto:alsuehrckwl@naver.com">
-        alsuehrckwl@naver.com
-      </a>
+      <a href="mailto:alsuehrckwl@naver.com">alsuehrckwl@naver.com</a>
     </div>
     <div className="right">
       <p>

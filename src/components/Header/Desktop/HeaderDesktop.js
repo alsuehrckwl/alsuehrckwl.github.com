@@ -81,7 +81,6 @@ class HeaderDesktop extends Component {
               </Link>
             </li>
           </ul>
-          
         </div>
         <div className="header-desktop__bottom" />
       </div>

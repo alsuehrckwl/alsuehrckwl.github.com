@@ -1,4 +1,4 @@
-import './scrollArea.scss';
-import ScrollArea from './ScrollArea.js';
+import "./scrollArea.scss"
+import ScrollArea from "./ScrollArea.js"
 
-export default ScrollArea;
+export default ScrollArea

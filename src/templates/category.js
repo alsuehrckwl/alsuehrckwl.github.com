@@ -1,17 +1,17 @@
-import React from "react";
-import Helmet from "react-helmet";
-import { graphql } from "gatsby";
-import Layout from "../components/layout";
+import React from "react"
+import Helmet from "react-helmet"
+import { graphql } from "gatsby"
+import Layout from "../components/layout"
 import ScrollArea from "../components/ScrollArea/ScrollAreaWithCss"
-import Post from "../components/Post/Post";
+import Post from "../components/Post/Post"
 // import PostListing from "../components/PostListing";
 
 export default class CategoryTemplate extends React.Component {
   render() {
-    const { pageContext, data } = this.props;
-    const { category } = pageContext;
-    const posts = data.allMarkdownRemark.edges;
-    
+    const { pageContext, data } = this.props
+    const { category } = pageContext
+    const posts = data.allMarkdownRemark.edges
+
     return (
       <Layout>
         <div className="category-container">
@@ -42,7 +42,7 @@ export default class CategoryTemplate extends React.Component {
           </ul>
         </ScrollArea>
       </Layout>
-    );
+    )
   }
 }
 
@@ -70,4 +70,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`
