@@ -17,15 +17,19 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Noto Sans KR`,
-            subsets: [`latin`],
-            variants: [`100`, `300`, `400`, `500`, `700`, `900`]
-          },
-        ],
+          `Noto Sans KR\:100, 300, 400, 500, 700, 900`,
+
+        ]
+        // fonts: [
+        //   {
+        //     family: `Noto Sans KR`,
+        //     subsets: [`latin`],
+        //     variants: [`100`, `300`, `400`, `500`, `700`, `900`]
+        //   },
+        // ],
       },
     },
     {

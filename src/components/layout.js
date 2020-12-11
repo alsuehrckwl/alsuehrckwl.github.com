@@ -19,12 +19,6 @@ class Layout extends React.Component {
         )}
         <div className="contents">
           {children}
-          {/* <footer>
-            Copyright by Jeongwoo Kim. | © {new Date().getFullYear()}, Built
-            with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer> */}
         </div>
       </>
     )
